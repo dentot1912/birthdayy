@@ -687,10 +687,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const wishPopup = document.getElementById('wish-popup');
     const wishText = document.getElementById('wish-popup-text');
     let popupTimer = null;
+    let lastPopTime = 0;
+
+    const closeWishPopup = () => {
+        if (!wishPopup) return;
+        wishPopup.classList.remove('show');
+        if (popupTimer) {
+            clearTimeout(popupTimer);
+            popupTimer = null;
+        }
+    };
 
     document.querySelectorAll('.wish-bubble').forEach(bubble => {
         const popBubble = (e) => {
-            if (bubble.style.opacity === '0') return;
+            if (e) {
+                e.stopPropagation();
+                if (e.cancelable) e.preventDefault();
+            }
+
+            if (bubble.dataset.popped === 'true' || bubble.style.opacity === '0') return;
+            bubble.dataset.popped = 'true';
+            lastPopTime = Date.now();
 
             // Play pop explosion at center of clicked bubble
             const bRect = bubble.getBoundingClientRect();
@@ -706,21 +723,32 @@ document.addEventListener('DOMContentLoaded', () => {
             wishText.textContent = bubble.dataset.msg || '';
             wishPopup.classList.add('show');
 
-            clearTimeout(popupTimer);
+            if (popupTimer) clearTimeout(popupTimer);
             popupTimer = setTimeout(() => {
-                wishPopup.classList.remove('show');
-            }, 4500);
+                closeWishPopup();
+            }, 7000);
         };
 
-        bubble.addEventListener('click', popBubble);
-        bubble.addEventListener('touchstart', popBubble, { passive: true });
+        bubble.addEventListener('pointerdown', (e) => {
+            popBubble(e);
+        });
     });
 
     if (wishPopup) {
-        wishPopup.addEventListener('click', () => {
-            wishPopup.classList.remove('show');
-            clearTimeout(popupTimer);
+        wishPopup.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Cegah langsung tertutup jika baru saja terbuka dari event yang sama
+            if (Date.now() - lastPopTime < 400) return;
+            closeWishPopup();
         });
+
+        const closeBtn = document.getElementById('wish-popup-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeWishPopup();
+            });
+        }
     }
 
     document.getElementById('btn-to-gift').addEventListener('click', () => {

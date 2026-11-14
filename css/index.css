@@ -1161,6 +1161,31 @@ body {
     z-index: 1000;
     text-align: center;
     box-sizing: border-box;
+    cursor: pointer;
+}
+
+.wish-popup-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: rgba(255, 77, 148, 0.1);
+    border: none;
+    color: var(--quartz-pink);
+    font-size: 1rem;
+    font-weight: 700;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.wish-popup-close:hover {
+    background: var(--quartz-pink);
+    color: white;
 }
 
 .wish-popup.show {
