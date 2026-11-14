@@ -281,7 +281,9 @@ document.addEventListener('DOMContentLoaded', () => {
             { type: 'image', src: 'assets/img2.jpeg', label: '🩷' },
             { type: 'image', src: 'assets/img3.jpeg', label: '🩷' },
             { type: 'image', src: 'assets/img4.jpeg', label: '🩷' },
-            { type: 'video', src: 'assets/img5.mp4', label: '🩷' },
+            { type: 'image', src: 'assets/img5.jpeg', label: '🩷' },
+            { type: 'image', src: 'assets/img6.jpeg', label: '🩷' },
+            { type: 'video', src: 'assets/img7.mp4', label: '🩷' },
         ];
 
         media.forEach((item, idx) => {
