@@ -695,31 +695,102 @@ document.addEventListener('DOMContentLoaded', () => {
         goTo(4);
     });
 
-    /* ─── Music Player ────────────────────────────────────────────────────── */
+    /* ─── Music Player (YouTube IFrame API with Local Audio Fallback) ────── */
     const musicToggle = document.getElementById('music-toggle');
+    let ytPlayer = null;
+    let ytReady = false;
+    let isMusicPlaying = false;
+    const YOUTUBE_VIDEO_ID = 'kqqraGvoqVs';
+
+    // Load YouTube IFrame API asynchronous
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    window.onYouTubeIframeAPIReady = () => {
+        try {
+            ytPlayer = new YT.Player('yt-player', {
+                height: '100',
+                width: '100',
+                videoId: YOUTUBE_VIDEO_ID,
+                playerVars: {
+                    autoplay: 0,
+                    controls: 0,
+                    loop: 1,
+                    playlist: YOUTUBE_VIDEO_ID,
+                    playsinline: 1,
+                    enablejsapi: 1,
+                    origin: window.location.origin
+                },
+                events: {
+                    onReady: (event) => {
+                        ytReady = true;
+                        event.target.setVolume(60);
+                        if (isMusicPlaying) {
+                            event.target.playVideo();
+                        }
+                    },
+                    onStateChange: (event) => {
+                        if (event.data === YT.PlayerState.PLAYING) {
+                            isMusicPlaying = true;
+                            musicToggle?.classList.add('playing');
+                            if (musicToggle) musicToggle.textContent = '🎵';
+                        } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+                            isMusicPlaying = false;
+                            musicToggle?.classList.remove('playing');
+                            if (musicToggle) musicToggle.textContent = '🔇';
+                        }
+                    }
+                }
+            });
+        } catch (e) {
+            console.warn('YouTube Player init error:', e);
+        }
+    };
 
     const playMusic = () => {
-        if (!state.audio) return;
-        state.audio.volume = 0.5;
-        state.audio.play()
-            .then(() => {
-                musicToggle?.classList.add('playing');
-                musicToggle?.classList.add('visible');
-                if (musicToggle) musicToggle.textContent = '🎵';
-            })
-            .catch(() => { });
+        isMusicPlaying = true;
+        musicToggle?.classList.add('playing');
+        if (musicToggle) musicToggle.textContent = '🎵';
+
+        if (ytPlayer && ytReady && typeof ytPlayer.playVideo === 'function') {
+            try {
+                ytPlayer.playVideo();
+                return;
+            } catch (e) {
+                console.warn('YT play failed, trying fallback audio', e);
+            }
+        }
+
+        // Fallback ke local audio jika YouTube belum ready atau offline
+        if (state.audio) {
+            state.audio.volume = 0.5;
+            state.audio.play().catch(() => {});
+        }
+    };
+
+    const pauseMusic = () => {
+        isMusicPlaying = false;
+        musicToggle?.classList.remove('playing');
+        if (musicToggle) musicToggle.textContent = '🔇';
+
+        if (ytPlayer && ytReady && typeof ytPlayer.pauseVideo === 'function') {
+            try {
+                ytPlayer.pauseVideo();
+            } catch (e) {}
+        }
+
+        if (state.audio && !state.audio.paused) {
+            state.audio.pause();
+        }
     };
 
     const toggleMusic = () => {
-        if (!state.audio) return;
-        if (state.audio.paused) {
-            state.audio.play();
-            musicToggle?.classList.add('playing');
-            if (musicToggle) musicToggle.textContent = '🎵';
+        if (isMusicPlaying) {
+            pauseMusic();
         } else {
-            state.audio.pause();
-            musicToggle?.classList.remove('playing');
-            if (musicToggle) musicToggle.textContent = '🔇';
+            playMusic();
         }
     };
 

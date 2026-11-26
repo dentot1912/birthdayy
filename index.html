@@ -38,6 +38,11 @@
         <button id="fullscreen-toggle" class="control-btn" aria-label="Toggle fullscreen" title="Full Screen">⛶</button>
     </div>
 
+    <!-- Hidden YouTube Audio Player -->
+    <div id="yt-player-container" style="position: absolute; width: 1px; height: 1px; left: -9999px; top: -9999px; overflow: hidden; pointer-events: none;">
+        <div id="yt-player"></div>
+    </div>
+
     <main class="app-container" id="app">
 
         <!-- ═══════════════════════════════════════════ -->
@@ -632,10 +637,7 @@
         </section>
     </main>
 
-    <!-- Music Toggle (mute/unmute) -->
-    <button id="music-toggle" class="music-toggle" aria-label="Toggle music">🎵</button>
-
-    <!-- Background Music -->
+    <!-- Background Music Fallback -->
     <audio id="bg-music" loop preload="auto">
         <source src="assets/music.mp3" type="audio/mpeg">
     </audio>
