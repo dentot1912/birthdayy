@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
         triggerBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, 45, 'star');
 
         envelope.classList.add('open');
-        envelopeHint.textContent = "Terbuka! Tekan tombol di surat... ✨";
+        envelopeHint.textContent = "Terbuka! Tekan tombol di surat... ❤️";
         envelopeHint.style.animation = 'none';
 
         // Play gentle introductory sound context & enter fullscreen
@@ -238,6 +238,112 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnDiaryNext = document.getElementById('btn-diary-next');
     const diaryLock = document.getElementById('diary-lock');
     const diaryTapHint = document.getElementById('diary-tap-hint');
+    const diaryCarousel = document.getElementById('diary-carousel');
+    const diaryPrevBtn = document.getElementById('diary-prev-btn');
+    const diaryNextBtn = document.getElementById('diary-next-btn');
+    const diaryDotsContainer = document.getElementById('diary-dots');
+    const diaryPages = document.querySelectorAll('.diary-page');
+
+    let currentDiaryPage = 0;
+    const totalDiaryPages = diaryPages.length;
+
+    // Inisialisasi Dots
+    if (diaryDotsContainer && totalDiaryPages > 0) {
+        diaryDotsContainer.innerHTML = '';
+        for (let i = 0; i < totalDiaryPages; i++) {
+            const dot = document.createElement('span');
+            dot.className = `diary-dot ${i === 0 ? 'active' : ''}`;
+            dot.dataset.page = i;
+            dot.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showDiaryPage(i);
+            });
+            diaryDotsContainer.appendChild(dot);
+        }
+    }
+
+    const showDiaryPage = (targetIndex, direction = null) => {
+        if (targetIndex < 0 || targetIndex >= totalDiaryPages || targetIndex === currentDiaryPage) return;
+
+        const prevPage = diaryPages[currentDiaryPage];
+        const nextPage = diaryPages[targetIndex];
+        const isForward = direction !== null ? direction > 0 : targetIndex > currentDiaryPage;
+
+        // Reset semua class transisi lama
+        diaryPages.forEach(p => p.classList.remove('exit-left', 'exit-right'));
+
+        if (isForward) {
+            prevPage.classList.remove('active');
+            prevPage.classList.add('exit-left');
+            nextPage.classList.remove('exit-left', 'exit-right');
+            nextPage.classList.add('active');
+        } else {
+            prevPage.classList.remove('active');
+            prevPage.classList.add('exit-right');
+            nextPage.classList.remove('exit-left', 'exit-right');
+            nextPage.classList.add('active');
+        }
+
+        currentDiaryPage = targetIndex;
+
+        // Update Dots
+        if (diaryDotsContainer) {
+            const dots = diaryDotsContainer.querySelectorAll('.diary-dot');
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentDiaryPage);
+            });
+        }
+
+        // Update Tombol Next/Prev State (disable di ujung)
+        if (diaryPrevBtn) {
+            diaryPrevBtn.style.opacity = currentDiaryPage === 0 ? '0.4' : '1';
+            diaryPrevBtn.style.pointerEvents = currentDiaryPage === 0 ? 'none' : 'auto';
+        }
+        if (diaryNextBtn) {
+            diaryNextBtn.style.opacity = currentDiaryPage === totalDiaryPages - 1 ? '0.4' : '1';
+            diaryNextBtn.style.pointerEvents = currentDiaryPage === totalDiaryPages - 1 ? 'none' : 'auto';
+        }
+    };
+
+    if (diaryPrevBtn) {
+        diaryPrevBtn.style.opacity = '0.4';
+        diaryPrevBtn.style.pointerEvents = 'none';
+        diaryPrevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showDiaryPage(currentDiaryPage - 1, -1);
+        });
+    }
+
+    if (diaryNextBtn) {
+        diaryNextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showDiaryPage(currentDiaryPage + 1, 1);
+        });
+    }
+
+    // Touch Swipe Support untuk Diary Carousel
+    if (diaryCarousel) {
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        diaryCarousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        diaryCarousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diffX = touchEndX - touchStartX;
+            if (Math.abs(diffX) > 40) {
+                if (diffX < 0) {
+                    // Geser ke kiri -> Halaman berikutnya
+                    showDiaryPage(currentDiaryPage + 1, 1);
+                } else {
+                    // Geser ke kanan -> Halaman sebelumnya
+                    showDiaryPage(currentDiaryPage - 1, -1);
+                }
+            }
+        }, { passive: true });
+    }
 
     const openDiary = () => {
         if (state.diaryOpen) return;
@@ -259,7 +365,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 600);
     };
 
-    diaryScene.addEventListener('click', openDiary);
+    diaryScene.addEventListener('click', (e) => {
+        // Jangan trigger unlock berulang kali saat sedang slide di dalam halaman diary
+        if (e.target.closest('.diary-nav') || e.target.closest('.diary-carousel')) {
+            if (state.diaryOpen) return;
+        }
+        openDiary();
+    });
     diaryScene.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDiary(); }
     });
@@ -566,7 +678,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
             cakeTitle.textContent = 'Yummy! Buat permohonan...';
-            cakeSub.textContent = 'Good job! ✨';
+            cakeSub.textContent = 'Good job! ❤️';
             btnCakeNext.classList.remove('btn--hidden');
             btnCakeNext.classList.add('btn--visible');
         }, 800);
@@ -772,7 +884,7 @@ document.addEventListener('DOMContentLoaded', () => {
         triggerBurst(gRect.left + gRect.width / 2, gRect.top, 65, 'confetti');
 
         setTimeout(() => {
-            giftTitle.textContent = 'Surprise! ✨';
+            giftTitle.textContent = 'Surprise! ❤️';
             giftReveal.classList.add('show');
             setup3DTilt();
         }, 800);
@@ -783,24 +895,29 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openGift(); }
     });
 
-    // 3D Parallax Tilt Effect on revealed reward photo
+    // 3D Parallax Tilt Effect on revealed reward
     const setup3DTilt = () => {
+        if (!rewardFrameTilt) return;
         rewardFrameTilt.addEventListener('mousemove', (e) => {
             const rect = rewardFrameTilt.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
 
-            // Calculate tilt percentages (-15deg to 15deg)
-            const rotX = -((y / rect.height) - 0.5) * 30;
-            const rotY = ((x / rect.width) - 0.5) * 30;
+            // Calculate tilt percentages (-12deg to 12deg)
+            const rotX = -((y / rect.height) - 0.5) * 24;
+            const rotY = ((x / rect.width) - 0.5) * 24;
 
-            const card = rewardFrameTilt.querySelector('.reward-frame');
-            card.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.06)`;
+            const card = rewardFrameTilt.querySelector('.necklace-svg') || rewardFrameTilt.querySelector('.bouquet-svg') || rewardFrameTilt.querySelector('.reward-frame');
+            if (card) {
+                card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.04)`;
+            }
         });
 
         rewardFrameTilt.addEventListener('mouseleave', () => {
-            const card = rewardFrameTilt.querySelector('.reward-frame');
-            card.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
+            const card = rewardFrameTilt.querySelector('.necklace-svg') || rewardFrameTilt.querySelector('.bouquet-svg') || rewardFrameTilt.querySelector('.reward-frame');
+            if (card) {
+                card.style.transform = `perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)`;
+            }
         });
     };
 

@@ -63,8 +63,8 @@
                             <img src="https://usagif.com/wp-content/uploads/gify/hello-kitty-sticker-9.gif"
                                 alt="Hello Kitty waving" width="100" height="100">
                         </div>
-                        <h1 class="intro-title">Happy Birthday!<br><em>Sayaangg🥳</em></h1>
-                        <p class="intro-sub">Aku sudah menyiapkan sesuatu yang special untuk kamu 🫶🏼.</p>
+                        <h1 class="intro-title">宝贝，<br><em>生日快乐！🥳</em></h1>
+                        <p class="intro-sub">我为你准备了一个小惊喜，快点下面的按钮看看吧 🫶🏼.</p>
                         <button id="btn-open-intro" class="btn-primary" aria-label="Open birthday surprise">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -82,7 +82,7 @@
                         <div class="seal-stamp">🎀</div>
                     </div>
                 </div>
-                <p class="envelope-hint" id="envelope-hint">Ketuk pita untuk membukanya... ✨</p>
+                <p class="envelope-hint" id="envelope-hint">Ketuk pita untuk membukanya... ❤️</p>
             </div>
         </section>
 
@@ -90,8 +90,8 @@
         <!-- SECTION 2: DIARY                           -->
         <!-- ═══════════════════════════════════════════ -->
         <section id="section-diary" class="section" data-index="1">
-            <h2 class="section-title">My Secret Diary</h2>
-            <p class="section-subtitle">Rahasia sih ... tapi khusus untuk kamu, kamu boleh baca! ^^</p>
+            <h2 class="section-title">我的秘密日记</h2>
+            <p class="section-subtitle">请弄开锁着的盒子，看一看</p>
 
             <div class="diary-scene" id="diary-scene" role="button" aria-label="Open secret diary" tabindex="0">
                 <div class="diary" id="diary">
@@ -185,44 +185,54 @@
                         <div class="diary-lines" aria-hidden="true"></div>
                         <div class="diary-text">
                             <div class="diary-carousel" id="diary-carousel">
+                                <!-- Page 1 -->
                                 <div class="diary-page active" data-page="0">
-                                    <p class="diary-date" id="tanggal">18 NOVEMBER 2026</p>
-
-                                    <h3 class="diary-salute">🥳 SELAMAT ULANG TAHUN YAA! 🎂🎉🤍</h3>
-
-                                    <div class="diary-handwritten-body" id="diary-handwritten-body">
-
+                                    <p class="diary-date">PAGE 1 / 2</p>
+                                    <h3 class="diary-salute">亲爱的宝贝 💖</h3>
+                                    <div class="diary-handwritten-body">
                                         <p>
-                                            Today is your special day ya adek? Happyy birthday buat ceweku yang paling
-                                            cantik di duniaa. Semoga di umur sayang yang sekarang ini, sayang jadi
-                                            pribadi yang lebih baik dari sebelumnya, jadi anak yang baik, banggain orang
-                                            tua, dan yang pastinya selalu di jauhin dari hal hal ga baikk.
+                                            亲爱的宝贝,<br>
+                                            提前祝你生日快乐呀！
                                         </p>
-
                                         <p>
-                                            Aku seneng banget buat nunggu hari ini dateng, walaupun ini juga tanda kalo
-                                            sayang udah semakin dewasa, tapi rasanya kayaa gaa sabarr banget buatt
-                                            rayainn. Aku minta maaf yaa sayang, sekarang kita belum bisa rayain ulang
-                                            tahunnya bareng bareng, tapi yang penting kita masih bisa rayain dari jauhh
-                                            tanpa ngurangin maknanya yaa sayangg.
+                                            虽然还没到你的生日，但我已经迫不及待想给你庆祝啦！
                                         </p>
-
                                         <p>
-                                            Oh iya, aku juga doain biar sayang makin sehat, makin panjang umur, makinn
-                                            happyy, dan apapun yang semogakan, selalu tersemogakan. Sekali lagi, happyy
-                                            birthday sayangg.
+                                            不知不觉，我们已经在一起七个月了。这七个月里，有开心的时候，也有闹小脾气的时候，但和你在一起的每一天，我都觉得很幸福。
                                         </p>
-
                                         <p>
-                                            "Tuhan aja sayang, apa lagi aku."
+                                            谢谢你走进我的生活，给我带来了那么多快乐和美好的回忆。
                                         </p>
-
                                     </div>
-
-                                    <p class="diary-sign">
-                                        With love, daw.
-                                    </p>
+                                    <p class="diary-sign">With love ♥</p>
                                 </div>
+
+                                <!-- Page 2 -->
+                                <div class="diary-page" data-page="1">
+                                    <p class="diary-date">PAGE 2 / 2</p>
+                                    <div class="diary-handwritten-body">
+                                        <p>
+                                            希望新的一岁，我的你可以每天开开心心、健健康康，少一点烦恼，多一点快乐。想要的都能得到，想做的事都能顺利实现。
+                                        </p>
+                                        <p>
+                                            七个月只是我们的开始，以后还有好多好多的日子要一起过。希望你以后的每一个生日，身边都有我。
+                                        </p>
+                                        <p>
+                                            生日快乐呀宝贝！<br>
+                                            爱你，不只是今天，而是每一天。❤️
+                                        </p>
+                                    </div>
+                                    <p class="diary-sign">Forever Yours ♥</p>
+                                </div>
+                            </div>
+
+                            <!-- Diary Navigation Controls -->
+                            <div class="diary-nav" id="diary-nav">
+                                <button type="button" class="diary-nav-btn" id="diary-prev-btn"
+                                    aria-label="Halaman sebelumnya">‹</button>
+                                <div class="diary-dots" id="diary-dots"></div>
+                                <button type="button" class="diary-nav-btn" id="diary-next-btn"
+                                    aria-label="Halaman berikutnya">›</button>
                             </div>
                         </div>
                     </div>
@@ -338,7 +348,7 @@
                         </g>
                     </svg>
                     <!-- Custom Glowing Knife Wand -->
-                    <div class="knife-wand" id="knife-wand">✨🔪</div>
+                    <div class="knife-wand" id="knife-wand">❤️🔪</div>
                 </div>
 
                 <!-- Drag interaction zone -->
@@ -368,34 +378,34 @@
 
             <div class="wish-field" id="wish-field">
                 <div class="wish-bubble" style="--wx:15%;--wy:15%;--dur:5.2s;"
-                    data-msg="Tolong jaga dirimu baik-baik yaa. Makan yang teratur, istirahat yang cukup, dan sehat selalu! ✨">
+                    data-msg="希望我的宝贝永远健健康康，不生病。">
                     <span class="bubble-spark"></span>
-                    Sehat Selalu
+                    健康
                 </div>
                 <div class="wish-bubble" style="--wx:62%;--wy:10%;--dur:4.5s;"
-                    data-msg="Pastinya, aku selalu jadi salah satu orang yang pengen selalu ngeliat kamu bahagia. Jadi, senantiasa bahagia yaa! 🤍">
+                    data-msg="希望你每天都开开心心，幸幸福福。">
                     <span class="bubble-spark"></span>
-                    Bahagia Selalu
+                    幸福
                 </div>
                 <div class="wish-bubble" style="--wx:32%;--wy:40%;--dur:4.8s;"
-                    data-msg="Kamu punya mimpi-mimpi yang besar, dan aku selalu percaya sama kamu. Kamu juga harus percaya, kalau setiap mimpi yang kamu punya akan selalu ada jalan untuk jadi kenyataan! Semangat yaa! 💫">
+                    data-msg="希望你的每一个梦想都能实现。">
                     <span class="bubble-spark"></span>
-                    Raih Mimpimu
+                    梦想
                 </div>
                 <div class="wish-bubble" style="--wx:70%;--wy:45%;--dur:5.5s;"
-                    data-msg="Semoga kesuksesan selalu menyertai setiap langkahmu. Aku selalu bangga sama setiap pencapaian kamu, apa pun itu! 🌟">
+                    data-msg="希望你做什么事情都顺顺利利。">
                     <span class="bubble-spark"></span>
-                    Sukses Selalu
+                    成功
                 </div>
                 <div class="wish-bubble" style="--wx:8%;--wy:68%;--dur:6s;"
-                    data-msg="Aku harap kamu selalu dikelilingi orang-orang yang sayang dan tulus sama kamu, yang bisa kasih kamu rasa hangat dan nyaman. Serta selalu dipenuhi cinta, buat dirimu sendiri dan orang-orang di sekitarmu. 🪷">
+                    data-msg="希望你永远被爱，尤其是被我爱着。">
                     <span class="bubble-spark"></span>
-                    Selalu Dicintai
+                    被爱
                 </div>
                 <div class="wish-bubble" style="--wx:65%;--wy:72%;--dur:4s;"
-                    data-msg="Aku nggak akan pernah bosen bilang kalau aku seneng banget bisa ketemu kamu. Makasih yaa sudah hadir di kehidupanku! 🫶🏻">
+                    data-msg="希望我们一直在一起，永远不分开。">
                     <span class="bubble-spark"></span>
-                    Selalu Bersama
+                    永远
                 </div>
             </div>
 
@@ -403,7 +413,7 @@
             <div class="wish-popup" id="wish-popup" aria-live="polite">
                 <button type="button" class="wish-popup-close" id="wish-popup-close" aria-label="Tutup pesan">✕</button>
                 <div class="wish-popup-inner">
-                    <div class="wish-popup-sparkles">✨💖✨</div>
+                    <div class="wish-popup-sparkles">❤️💖❤️</div>
                     <p id="wish-popup-text"></p>
                 </div>
             </div>
@@ -424,7 +434,7 @@
         <!-- SECTION 6: GIFT                            -->
         <!-- ═══════════════════════════════════════════ -->
         <section id="section-gift" class="section" data-index="5">
-            <h2 class="section-title" id="gift-title">Satu Hal Lagi...</h2>
+            <h2 class="section-title" id="gift-title">还有一个小惊喜……</h2>
 
             <div class="gift-scene">
                 <!-- 3D Luxury Gift Box SVG -->
@@ -468,20 +478,33 @@
 
                 <!-- Revealed Gift Image -->
                 <div id="gift-reveal" class="gift-reveal">
-                    <div class="bouquet-wrapper" id="reward-frame-tilt">
-                        <svg class="bouquet-svg" viewBox="0 0 280 330" xmlns="http://www.w3.org/2000/svg"
-                            aria-label="Romantic flower bouquet">
+                    <div class="necklace-wrapper" id="reward-frame-tilt">
+                        <svg class="necklace-svg" viewBox="0 0 320 360" xmlns="http://www.w3.org/2000/svg"
+                            aria-label="Sparkling diamond necklace gift">
                             <defs>
-                                <radialGradient id="wrapGrad" cx="50%" cy="0%" r="100%">
-                                    <stop offset="0%" stop-color="#ffd6eb" />
-                                    <stop offset="100%" stop-color="#ff66a3" />
+                                <linearGradient id="goldChain" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#fff2b3" />
+                                    <stop offset="35%" stop-color="#ffd700" />
+                                    <stop offset="70%" stop-color="#e6ac00" />
+                                    <stop offset="100%" stop-color="#ffea80" />
+                                </linearGradient>
+                                <!-- Heart Diamond Inner Glow -->
+                                <radialGradient id="heartDiamond" cx="35%" cy="30%" r="75%">
+                                    <stop offset="0%" stop-color="#ffffff" />
+                                    <stop offset="25%" stop-color="#ffecf5" />
+                                    <stop offset="60%" stop-color="#ff80b3" />
+                                    <stop offset="100%" stop-color="#ff1a75" />
                                 </radialGradient>
-                                <radialGradient id="bowKnot" cx="35%" cy="35%">
-                                    <stop offset="0%" stop-color="#ffe066" />
-                                    <stop offset="100%" stop-color="#b8860b" />
-                                </radialGradient>
-                                <filter id="roseGlow" x="-30%" y="-30%" width="160%" height="160%">
-                                    <feGaussianBlur stdDeviation="3" result="blur" />
+                                <!-- Rose Gold Pendant Frame -->
+                                <linearGradient id="pendantFrame" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ffe6eb" />
+                                    <stop offset="40%" stop-color="#ffb3c6" />
+                                    <stop offset="80%" stop-color="#d4738c" />
+                                    <stop offset="100%" stop-color="#ffe6eb" />
+                                </linearGradient>
+                                <!-- Soft Shimmer Glow Filter -->
+                                <filter id="jewelGlow" x="-30%" y="-30%" width="160%" height="160%">
+                                    <feGaussianBlur stdDeviation="3.5" result="blur" />
                                     <feMerge>
                                         <feMergeNode in="blur" />
                                         <feMergeNode in="SourceGraphic" />
@@ -489,191 +512,118 @@
                                 </filter>
                             </defs>
 
-                            <!-- ─── STEMS ─────────────────────────────── -->
-                            <path d="M140 242 C138 215 128 188 118 160" stroke="#2d8a4e" stroke-width="3" fill="none"
-                                stroke-linecap="round" />
-                            <path d="M140 242 C140 212 140 180 140 148" stroke="#27ae60" stroke-width="3" fill="none"
-                                stroke-linecap="round" />
-                            <path d="M140 242 C142 213 152 183 162 156" stroke="#2d8a4e" stroke-width="3" fill="none"
-                                stroke-linecap="round" />
-                            <path d="M140 242 C136 210 120 176 103 148" stroke="#27ae60" stroke-width="2.5" fill="none"
-                                stroke-linecap="round" />
-                            <path d="M140 242 C144 208 162 172 177 145" stroke="#2d8a4e" stroke-width="2.5" fill="none"
-                                stroke-linecap="round" />
+                            <!-- ─── VELVET JEWELRY DISPLAY BASE ─────────── -->
+                            <rect x="25" y="20" width="270" height="320" rx="36" fill="url(#boxVelvet)"
+                                stroke="rgba(255, 215, 0, 0.4)" stroke-width="2" />
+                            <rect x="33" y="28" width="254" height="304" rx="28" fill="none"
+                                stroke="rgba(255, 215, 0, 0.15)" stroke-width="1" stroke-dasharray="4 4" />
 
-                            <!-- ─── LEAVES ─────────────────────────────── -->
-                            <path d="M128 190 C110 182 104 167 117 162 C126 160 129 174 128 190Z" fill="#27ae60"
-                                opacity="0.92" />
-                            <line x1="128" y1="190" x2="118" y2="164" stroke="#1a7a3a" stroke-width="0.8"
-                                opacity="0.5" />
-                            <path d="M153 180 C171 172 176 157 163 153 C154 151 151 165 153 180Z" fill="#2ecc71"
-                                opacity="0.88" />
-                            <line x1="153" y1="180" x2="162" y2="155" stroke="#1a7a3a" stroke-width="0.8"
-                                opacity="0.5" />
-                            <path d="M112 170 C94 162 88 146 102 142 C111 140 113 155 112 170Z" fill="#27ae60"
-                                opacity="0.88" />
-                            <path d="M168 165 C186 157 191 141 177 138 C168 136 166 151 168 165Z" fill="#2ecc71"
-                                opacity="0.85" />
-                            <path d="M124 155 C112 142 115 126 126 126 C133 126 133 140 124 155Z" fill="#3cb371"
-                                opacity="0.8" />
-                            <path d="M157 150 C169 137 166 121 155 121 C148 121 148 135 157 150Z" fill="#3cb371"
-                                opacity="0.8" />
+                            <!-- ─── NECKLACE BUST / CURVE GUIDES ────────── -->
+                            <path d="M70 40 C75 140, 100 215, 160 240 C220 215, 245 140, 250 40" fill="none"
+                                stroke="rgba(255, 215, 0, 0.25)" stroke-width="8" stroke-linecap="round" />
 
-                            <!-- ─── WRAP PAPER ──────────────────────────── -->
-                            <path d="M102 242 L72 322 L208 322 L178 242 Z" fill="url(#wrapGrad)" opacity="0.88" />
-                            <path d="M102 242 L85 322 L72 322 Z" fill="#cc246c" opacity="0.28" />
-                            <path d="M178 242 L195 322 L208 322 Z" fill="#cc246c" opacity="0.28" />
-                            <line x1="118" y1="242" x2="108" y2="322" stroke="rgba(255,255,255,0.22)"
-                                stroke-width="1" />
-                            <line x1="137" y1="242" x2="130" y2="322" stroke="rgba(255,255,255,0.18)"
-                                stroke-width="1" />
-                            <line x1="156" y1="242" x2="152" y2="322" stroke="rgba(255,255,255,0.18)"
-                                stroke-width="1" />
-                            <line x1="173" y1="242" x2="173" y2="322" stroke="rgba(255,255,255,0.18)"
-                                stroke-width="1" />
+                            <!-- ─── GOLD CHAIN WITH SPARKLING PEARLS ───── -->
+                            <!-- Base Chain Line -->
+                            <path d="M70 40 C75 140, 100 215, 160 240 C220 215, 245 140, 250 40" fill="none"
+                                stroke="url(#goldChain)" stroke-width="2.5" stroke-linecap="round" />
 
-                            <!-- ─── GOLD BOW ────────────────────────────── -->
-                            <path d="M140 255 C118 232 90 240 96 254 C102 268 134 258 140 255Z" fill="#ffd700"
-                                stroke="#daa520" stroke-width="0.8" />
-                            <path d="M140 255 C162 232 190 240 184 254 C178 268 146 258 140 255Z" fill="#ffd700"
-                                stroke="#daa520" stroke-width="0.8" />
-                            <path d="M128 260 C116 273 112 284 124 278 C132 274 133 265 128 260Z" fill="#daa520"
-                                opacity="0.85" />
-                            <path d="M152 260 C164 273 168 284 156 278 C148 274 147 265 152 260Z" fill="#daa520"
-                                opacity="0.85" />
-                            <ellipse cx="140" cy="255" rx="10" ry="8" fill="url(#bowKnot)" />
-                            <circle cx="137" cy="252" r="2.5" fill="rgba(255,255,255,0.5)" />
+                            <!-- Chain Beads & Links -->
+                            <!-- Left Side Links -->
+                            <circle cx="73" cy="55" r="3" fill="url(#goldChain)" />
+                            <circle cx="77" cy="75" r="3.2" fill="url(#goldChain)" />
+                            <circle cx="82" cy="95" r="3.2" fill="url(#goldChain)" />
+                            <circle cx="88" cy="115" r="3.4" fill="url(#goldChain)" />
+                            <circle cx="95" cy="135" r="3.6" fill="url(#goldChain)" />
+                            <circle cx="104" cy="155" r="3.8" fill="url(#goldChain)" />
+                            <circle cx="114" cy="175" r="4" fill="url(#goldChain)" />
+                            <circle cx="127" cy="195" r="4.2" fill="url(#goldChain)" />
+                            <circle cx="142" cy="215" r="4.5" fill="url(#goldChain)" />
 
-                            <!-- ─── ROSE 4 — back-left (soft white-blue) ── -->
-                            <g transform="translate(97,125)">
-                                <ellipse cx="0" cy="-20" rx="12" ry="17" fill="#ffe6ee" opacity="0.9" />
-                                <ellipse cx="0" cy="-20" rx="12" ry="17" fill="#ffe6ee" opacity="0.9"
-                                    transform="rotate(72)" />
-                                <ellipse cx="0" cy="-20" rx="12" ry="17" fill="#ffe6ee" opacity="0.9"
-                                    transform="rotate(144)" />
-                                <ellipse cx="0" cy="-20" rx="12" ry="17" fill="#ffe6ee" opacity="0.9"
-                                    transform="rotate(216)" />
-                                <ellipse cx="0" cy="-20" rx="12" ry="17" fill="#ffe6ee" opacity="0.9"
-                                    transform="rotate(288)" />
-                                <ellipse cx="0" cy="-13" rx="8" ry="11" fill="#ffb3d9" transform="rotate(36)" />
-                                <ellipse cx="0" cy="-13" rx="8" ry="11" fill="#ffb3d9" transform="rotate(108)" />
-                                <ellipse cx="0" cy="-13" rx="8" ry="11" fill="#ffb3d9" transform="rotate(180)" />
-                                <ellipse cx="0" cy="-13" rx="8" ry="11" fill="#ffb3d9" transform="rotate(252)" />
-                                <ellipse cx="0" cy="-13" rx="8" ry="11" fill="#ffb3d9" transform="rotate(324)" />
-                                <circle r="8" fill="#ff80b3" />
-                                <circle r="4" fill="#ff4d94" />
-                                <circle cx="-3" cy="-3" r="2" fill="rgba(255,255,255,0.55)" />
+                            <!-- Right Side Links -->
+                            <circle cx="247" cy="55" r="3" fill="url(#goldChain)" />
+                            <circle cx="243" cy="75" r="3.2" fill="url(#goldChain)" />
+                            <circle cx="238" cy="95" r="3.2" fill="url(#goldChain)" />
+                            <circle cx="232" cy="115" r="3.4" fill="url(#goldChain)" />
+                            <circle cx="225" cy="135" r="3.6" fill="url(#goldChain)" />
+                            <circle cx="216" cy="155" r="3.8" fill="url(#goldChain)" />
+                            <circle cx="206" cy="175" r="4" fill="url(#goldChain)" />
+                            <circle cx="193" cy="195" r="4.2" fill="url(#goldChain)" />
+                            <circle cx="178" cy="215" r="4.5" fill="url(#goldChain)" />
+
+                            <!-- ─── PENDANT CONNECTOR / BAIL ────────────── -->
+                            <ellipse cx="160" cy="235" rx="5" ry="7" fill="url(#goldChain)" stroke="#997300"
+                                stroke-width="0.8" />
+                            <ellipse cx="160" cy="235" rx="2.5" ry="4" fill="#300d1b" />
+                            <circle cx="160" cy="245" r="4" fill="#ffffff" filter="url(#jewelGlow)" />
+
+                            <!-- ─── HEART GEMSTONE PENDANT ──────────────── -->
+                            <g transform="translate(160, 268) scale(1.15)">
+                                <!-- Outer Halo Glow -->
+                                <path
+                                    d="M0 -14 C-16 -32, -38 -12, -38 10 C-38 28, -18 42, 0 54 C18 42, 38 28, 38 10 C38 -12, 16 -32, 0 -14 Z"
+                                    fill="rgba(255, 77, 148, 0.28)" filter="url(#jewelGlow)" />
+
+                                <!-- Rose Gold Prong Setting / Outer Border -->
+                                <path
+                                    d="M0 -12 C-14 -28, -34 -10, -34 10 C-34 26, -16 39, 0 50 C16 39, 34 26, 34 10 C34 -10, 14 -28, 0 -12 Z"
+                                    fill="url(#pendantFrame)" stroke="#ffccd7" stroke-width="2" />
+
+                                <!-- Small Crystal Accents around Rim -->
+                                <circle cx="-28" cy="0" r="1.8" fill="#ffffff" />
+                                <circle cx="-28" cy="16" r="1.8" fill="#ffffff" />
+                                <circle cx="-18" cy="30" r="1.8" fill="#ffffff" />
+                                <circle cx="-8" cy="40" r="1.8" fill="#ffffff" />
+                                <circle cx="28" cy="0" r="1.8" fill="#ffffff" />
+                                <circle cx="28" cy="16" r="1.8" fill="#ffffff" />
+                                <circle cx="18" cy="30" r="1.8" fill="#ffffff" />
+                                <circle cx="8" cy="40" r="1.8" fill="#ffffff" />
+                                <circle cx="0" cy="48" r="2.2" fill="#ffffff" />
+
+                                <!-- Main Heart Diamond Gem -->
+                                <path
+                                    d="M0 -8 C-12 -23, -29 -8, -29 9 C-29 23, -13 34, 0 44 C13 34, 29 23, 29 9 C29 -8, 12 -23, 0 -8 Z"
+                                    fill="url(#heartDiamond)" stroke="rgba(255, 255, 255, 0.85)" stroke-width="1.2" />
+
+                                <!-- Facet Reflections / Brilliant Cuts -->
+                                <polygon points="0,4 0,40 -12,14" fill="rgba(255, 255, 255, 0.45)" />
+                                <polygon points="0,4 0,40 12,14" fill="rgba(255, 255, 255, 0.2)" />
+                                <polygon points="0,4 -16,-6 -24,8" fill="rgba(255, 255, 255, 0.35)" />
+                                <polygon points="0,4 16,-6 24,8" fill="rgba(255, 255, 255, 0.55)" />
+
+                                <!-- Sparkle Star on Diamond -->
+                                <path d="M-8 4 Q-8 10 -14 10 Q-8 10 -8 16 Q-8 10 -2 10 Q-8 10 -8 4 Z" fill="#ffffff" />
+                                <circle cx="-8" cy="10" r="1.5" fill="#ffffff" filter="url(#jewelGlow)" />
                             </g>
 
-                            <!-- ─── ROSE 5 — back-right (rosy pink) ─────── -->
-                            <g transform="translate(183,125)">
-                                <ellipse cx="0" cy="-20" rx="12" ry="17" fill="#ffb3c6" opacity="0.92" />
-                                <ellipse cx="0" cy="-20" rx="12" ry="17" fill="#ffb3c6" opacity="0.92"
-                                    transform="rotate(72)" />
-                                <ellipse cx="0" cy="-20" rx="12" ry="17" fill="#ffb3c6" opacity="0.92"
-                                    transform="rotate(144)" />
-                                <ellipse cx="0" cy="-20" rx="12" ry="17" fill="#ffb3c6" opacity="0.92"
-                                    transform="rotate(216)" />
-                                <ellipse cx="0" cy="-20" rx="12" ry="17" fill="#ffb3c6" opacity="0.92"
-                                    transform="rotate(288)" />
-                                <ellipse cx="0" cy="-13" rx="8" ry="11" fill="#ff8fab" transform="rotate(36)" />
-                                <ellipse cx="0" cy="-13" rx="8" ry="11" fill="#ff8fab" transform="rotate(108)" />
-                                <ellipse cx="0" cy="-13" rx="8" ry="11" fill="#ff8fab" transform="rotate(180)" />
-                                <ellipse cx="0" cy="-13" rx="8" ry="11" fill="#ff8fab" transform="rotate(252)" />
-                                <ellipse cx="0" cy="-13" rx="8" ry="11" fill="#ff8fab" transform="rotate(324)" />
-                                <circle r="8" fill="#ff4d6d" />
-                                <circle r="4" fill="#c0392b" />
-                                <circle cx="-3" cy="-3" r="2" fill="rgba(255,255,255,0.4)" />
-                            </g>
+                            <!-- ─── FLOATING GLITTER & SPARKLES ─────────── -->
+                            <!-- Top Right Big Sparkle -->
+                            <path d="M225 110 Q225 125 210 125 Q225 125 225 140 Q225 125 240 125 Q225 125 225 110 Z"
+                                fill="#fff" opacity="0.9" filter="url(#jewelGlow)" />
+                            <circle cx="225" cy="125" r="3" fill="#ffe6f0" />
 
-                            <!-- ─── ROSE 2 — front-left (red) ────────────── -->
-                            <g transform="translate(111,100)">
-                                <ellipse cx="0" cy="-22" rx="14" ry="19" fill="#ff6b6b" opacity="0.93" />
-                                <ellipse cx="0" cy="-22" rx="14" ry="19" fill="#ff6b6b" opacity="0.93"
-                                    transform="rotate(72)" />
-                                <ellipse cx="0" cy="-22" rx="14" ry="19" fill="#ff6b6b" opacity="0.93"
-                                    transform="rotate(144)" />
-                                <ellipse cx="0" cy="-22" rx="14" ry="19" fill="#ff6b6b" opacity="0.93"
-                                    transform="rotate(216)" />
-                                <ellipse cx="0" cy="-22" rx="14" ry="19" fill="#ff6b6b" opacity="0.93"
-                                    transform="rotate(288)" />
-                                <ellipse cx="0" cy="-14" rx="10" ry="13" fill="#ee5a24" transform="rotate(36)" />
-                                <ellipse cx="0" cy="-14" rx="10" ry="13" fill="#ee5a24" transform="rotate(108)" />
-                                <ellipse cx="0" cy="-14" rx="10" ry="13" fill="#ee5a24" transform="rotate(180)" />
-                                <ellipse cx="0" cy="-14" rx="10" ry="13" fill="#ee5a24" transform="rotate(252)" />
-                                <ellipse cx="0" cy="-14" rx="10" ry="13" fill="#ee5a24" transform="rotate(324)" />
-                                <circle r="9" fill="#c0392b" />
-                                <circle r="5" fill="#7b241c" />
-                                <circle cx="-3" cy="-3" r="2.5" fill="rgba(255,255,255,0.38)" />
-                            </g>
+                            <!-- Bottom Left Sparkle -->
+                            <path d="M95 245 Q95 255 85 255 Q95 255 95 265 Q95 255 105 255 Q95 255 95 245 Z"
+                                fill="#ffd700" opacity="0.85" />
+                            <circle cx="95" cy="255" r="2.2" fill="#fff" />
 
-                            <!-- ─── ROSE 3 — front-right (deep crimson) ─── -->
-                            <g transform="translate(169,100)">
-                                <ellipse cx="0" cy="-22" rx="14" ry="19" fill="#ff4757" opacity="0.93" />
-                                <ellipse cx="0" cy="-22" rx="14" ry="19" fill="#ff4757" opacity="0.93"
-                                    transform="rotate(72)" />
-                                <ellipse cx="0" cy="-22" rx="14" ry="19" fill="#ff4757" opacity="0.93"
-                                    transform="rotate(144)" />
-                                <ellipse cx="0" cy="-22" rx="14" ry="19" fill="#ff4757" opacity="0.93"
-                                    transform="rotate(216)" />
-                                <ellipse cx="0" cy="-22" rx="14" ry="19" fill="#ff4757" opacity="0.93"
-                                    transform="rotate(288)" />
-                                <ellipse cx="0" cy="-14" rx="10" ry="13" fill="#c0392b" transform="rotate(36)" />
-                                <ellipse cx="0" cy="-14" rx="10" ry="13" fill="#c0392b" transform="rotate(108)" />
-                                <ellipse cx="0" cy="-14" rx="10" ry="13" fill="#c0392b" transform="rotate(180)" />
-                                <ellipse cx="0" cy="-14" rx="10" ry="13" fill="#c0392b" transform="rotate(252)" />
-                                <ellipse cx="0" cy="-14" rx="10" ry="13" fill="#c0392b" transform="rotate(324)" />
-                                <circle r="9" fill="#7b241c" />
-                                <circle r="5" fill="#641e16" />
-                                <circle cx="-3" cy="-3" r="2.5" fill="rgba(255,255,255,0.38)" />
-                            </g>
+                            <!-- Center Pendant Floating Sparkle -->
+                            <path d="M195 285 Q195 293 187 293 Q195 293 195 301 Q195 293 203 293 Q195 293 195 285 Z"
+                                fill="#ffffff" opacity="0.9" />
 
-                            <!-- ─── ROSE 1 — center, large (glow) ────────── -->
-                            <g transform="translate(140,72)" filter="url(#roseGlow)">
-                                <circle r="32" fill="rgba(255,80,80,0.08)" />
-                                <!-- Outer petals -->
-                                <ellipse cx="0" cy="-27" rx="16" ry="23" fill="#ff6b6b" opacity="0.95" />
-                                <ellipse cx="0" cy="-27" rx="16" ry="23" fill="#ff6b6b" opacity="0.95"
-                                    transform="rotate(72)" />
-                                <ellipse cx="0" cy="-27" rx="16" ry="23" fill="#ff6b6b" opacity="0.95"
-                                    transform="rotate(144)" />
-                                <ellipse cx="0" cy="-27" rx="16" ry="23" fill="#ff6b6b" opacity="0.95"
-                                    transform="rotate(216)" />
-                                <ellipse cx="0" cy="-27" rx="16" ry="23" fill="#ff6b6b" opacity="0.95"
-                                    transform="rotate(288)" />
-                                <!-- Middle petals -->
-                                <ellipse cx="0" cy="-18" rx="12" ry="16" fill="#ff4757" transform="rotate(36)" />
-                                <ellipse cx="0" cy="-18" rx="12" ry="16" fill="#ff4757" transform="rotate(108)" />
-                                <ellipse cx="0" cy="-18" rx="12" ry="16" fill="#ff4757" transform="rotate(180)" />
-                                <ellipse cx="0" cy="-18" rx="12" ry="16" fill="#ff4757" transform="rotate(252)" />
-                                <ellipse cx="0" cy="-18" rx="12" ry="16" fill="#ff4757" transform="rotate(324)" />
-                                <!-- Inner petals -->
-                                <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#c0392b" transform="rotate(18)" />
-                                <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#c0392b" transform="rotate(90)" />
-                                <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#c0392b" transform="rotate(162)" />
-                                <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#c0392b" transform="rotate(234)" />
-                                <ellipse cx="0" cy="-11" rx="8" ry="11" fill="#c0392b" transform="rotate(306)" />
-                                <!-- Center bud -->
-                                <circle r="10" fill="#922b21" />
-                                <circle r="6" fill="#641e16" />
-                                <circle cx="-4" cy="-4" r="3" fill="rgba(255,255,255,0.38)" />
-                            </g>
+                            <!-- Ambient Star Dots -->
+                            <circle cx="75" cy="170" r="1.8" fill="#ffd700" opacity="0.75" />
+                            <circle cx="245" cy="180" r="2" fill="#fff" opacity="0.8" />
+                            <circle cx="160" cy="85" r="1.5" fill="#ffd700" opacity="0.6" />
+                            <circle cx="130" cy="115" r="1.5" fill="#fff" opacity="0.6" />
+                            <circle cx="190" cy="115" r="1.5" fill="#ffd700" opacity="0.6" />
+                            <circle cx="65" cy="285" r="1.8" fill="#ffb3c6" opacity="0.7" />
+                            <circle cx="255" cy="275" r="2" fill="#ffd700" opacity="0.7" />
 
-                            <!-- ─── SPARKLES & HEARTS ──────────────────── -->
-                            <circle cx="68" cy="85" r="3" fill="#ffd700" opacity="0.75" />
-                            <circle cx="212" cy="92" r="2.5" fill="#ffd700" opacity="0.65" />
-                            <circle cx="58" cy="155" r="2" fill="#fff" opacity="0.6" />
-                            <circle cx="222" cy="148" r="2" fill="#fff" opacity="0.55" />
-                            <circle cx="72" cy="210" r="1.5" fill="#ffd700" opacity="0.55" />
-                            <circle cx="208" cy="205" r="2" fill="#ffd700" opacity="0.55" />
-                            <line x1="68" y1="82" x2="68" y2="88" stroke="#ffd700" stroke-width="1.2" opacity="0.75" />
-                            <line x1="65" y1="85" x2="71" y2="85" stroke="#ffd700" stroke-width="1.2" opacity="0.75" />
-                            <line x1="212" y1="89" x2="212" y2="95" stroke="#ffd700" stroke-width="1" opacity="0.65" />
-                            <line x1="209" y1="92" x2="215" y2="92" stroke="#ffd700" stroke-width="1" opacity="0.65" />
-                            <text x="50" y="118" font-size="13" fill="#ff6b6b" opacity="0.5">♥</text>
-                            <text x="218" y="122" font-size="11" fill="#ff4757" opacity="0.45">♥</text>
-                            <text x="78" y="52" font-size="9" fill="#ff6b6b" opacity="0.45">♥</text>
-                            <text x="196" y="58" font-size="10" fill="#ffb3c6" opacity="0.5">♥</text>
+                            <!-- Little Hearts -->
+                            <text x="50" y="80" font-size="12" fill="#ff80b3" opacity="0.5">♥</text>
+                            <text x="255" y="85" font-size="13" fill="#ff80b3" opacity="0.5">♥</text>
+                            <text x="65" y="210" font-size="10" fill="#ffd700" opacity="0.55">✦</text>
+                            <text x="245" y="225" font-size="12" fill="#ffd700" opacity="0.55">✦</text>
                         </svg>
                     </div>
                     <p class="gift-msg-sign">— With all my love &amp; sincerity ♥</p>
