@@ -677,8 +677,8 @@ document.addEventListener('DOMContentLoaded', () => {
         triggerBurst(clientX, clientY, 55, 'star');
 
         setTimeout(() => {
-            cakeTitle.textContent = 'Yummy! Buat permohonan...';
-            cakeSub.textContent = 'Good job! ❤️';
+            cakeTitle.textContent = '快许个生日愿望吧';
+            cakeSub.textContent = '宝贝真棒 ! ❤️';
             btnCakeNext.classList.remove('btn--hidden');
             btnCakeNext.classList.add('btn--visible');
         }, 800);
